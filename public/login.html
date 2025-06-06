@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME TRAINING</title>
+    <link rel="stylesheet" href="styles/login.css">
+    <!-- Boxicons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Ласкаво просимо до домашніх тренувань</h1>
+    </header>
+    
+    <div class="role-selection">
+        <h2>Ким ви є на сайті?</h2>
+        <div class="role-options-container">
+            <label class="role-option">
+                <input type="radio" name="role" value="user"> Користувач
+            </label>
+            <label class="role-option">
+                <input type="radio" name="role" value="trainer"> Тренер
+            </label>
+        </div>
+    </div>
+    
+    <!-- Форма входу користувача-->
+    <div class="login-container hidden" id="loginForm">
+        <h1>Увійти</h1>
+        <div class="form-message-container">
+            <form id="loginUserForm">
+                <input type="email" id="loginEmail" placeholder="Email" required>
+                <input type="password" id="loginPassword" placeholder="Password" required>
+                <button type="submit">Увійти</button>
+            </form>
+        </div>
+        <p>Ще не маєте акаунту? <a href="#" id="showSignup">Зареєструватись</a></p>
+    </div>
+    
+    <!-- Форма реєстрації -->
+    <div class="signup-form hidden" id="signupForm">
+        <h1>Зареєструватись</h1>
+        <div class="form-message-container">
+            <form id="signupUserForm">
+                <input type="text" id="signupUsername" placeholder="Username" autocomplete="off" required>
+                <input type="email" id="signupEmail" placeholder="Email" required>
+                <input type="password" id="signupPassword" placeholder="Password" required>
+                <div id="signupPasswordHelp" class="password-help">
+                    Пароль має бути не менше 8 символів, містити латинські літери (великі та малі) і цифри.
+                </div>
+                <button type="submit">Зареєструватись</button>
+            </form>
+        </div>
+        <p>Вже маєте акаунт? <a href="#" id="showLogin">Увійти</a></p>
+    </div>
+    
+    <!-- Вхід тренера-->
+    <div class="trainer-code-container hidden" id="trainerCodeContainer">
+        <h1>Введіть спеціальний код для входу</h1>
+        <form id="trainerCodeForm">
+            <input type="password" id="trainerCode" placeholder="Спеціальний код" autocomplete="off" required>
+            <button type="submit">Вхід</button>
+        </form>
+    </div>
+
+    <footer>
+        <span>&copy; Created by Zinchenko M. D. student 545-B KHAI</span>
+        <img src="/img/logo_og.png" alt="">
+    </footer>
+
+    <script src="scripts/script.js"></script>
+</body>
+</html>

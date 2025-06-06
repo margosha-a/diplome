@@ -1,0 +1,330 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background: radial-gradient(circle, #075724, #aee2c1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Блокування кліків і наведення на силуети, якщо відкрита будь-яка модалка */
+body.task-open .photo,
+body.task-open .photo img,
+body.notebook-open .photo,
+body.notebook-open .photo img {
+    pointer-events: none !important;
+    filter: grayscale(70%) brightness(0.9);
+    opacity: 0.7;
+    transition: filter 0.2s, opacity 0.2s;
+}
+
+h1 {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    color: #222;
+    text-align: center;
+}
+
+footer {
+    text-align: right;
+    width: 100%;
+    margin-top: 10px;
+    padding-bottom: 20px;
+}
+
+/* Галерея фото */
+.photo-gallery {
+    position: relative;
+    width: 320px;
+    height: 500px;
+    margin: 0 auto;
+}
+
+.photo {
+    position: absolute;
+    width: 320px;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.photo img {
+    width: 50%;
+    height: auto;
+    display: block;
+    margin: 0;
+    padding: 0;
+    transition: transform 0.2s;
+}
+
+/* Позиції частин тіла */
+#head { top: 0; left: 50px; width: 58%; }
+#shoulder { top: 100px; left: -40px; width: 93%; }
+#forearm { top: 96px; left: -181px; width: 90%; }
+#chest { top: 149px; left: 29px; width: 63%; }
+#abs { top: 199px; left: 25px; width: 64%; }
+#hips { top: 260px; left: 35px; width: 60%; }
+#thigh { top: 318px; left: 40px; width: 56%; }
+#calf { top: 390px; left: 36px; width: 59%; }
+
+.photo img:hover { transform: scale(1.1); }
+.photo img:active { transform: scale(1.05); }
+
+/* Сайдбар */
+:root {
+    --sidebar-width-open: 220px;
+    --sidebar-width-closed: 60px;
+    --sidebar-bg: #0b3d1e;
+    --sidebar-color: #fff;
+    --sidebar-accent: #1a7f43;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: var(--sidebar-width-closed);
+    height: 100vh;
+    background: var(--sidebar-bg);
+    color: var(--sidebar-color);
+    transition: width 0.3s;
+    z-index: 1000;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.sidebar.open { width: var(--sidebar-width-open); }
+
+.sidebar-toggle-btn {
+    background: none;
+    border: none;
+    color: var(--sidebar-color);
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 14px 0;
+    width: 100%;
+    text-align: center;
+    outline: none;
+}
+
+.sidebar-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    margin-top: 10px;
+}
+
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    padding: 20px 16px;
+    gap: 16px;
+}
+
+.sidebar-link {
+    display: flex;
+    align-items: center;
+    color: inherit;
+    text-decoration: none;
+    gap: 16px;
+}
+
+.sidebar-header a:hover { background: var(--sidebar-accent); }
+
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-menu li { width: 100%; }
+
+.sidebar-menu a {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 14px 16px;
+    color: var(--sidebar-color);
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: background 0.2s;
+    border-radius: 4px;
+}
+
+.sidebar-menu a:hover { background: var(--sidebar-accent); }
+
+.sidebar-icon {
+    font-size: 1.8rem;
+    min-width: 24px;
+    text-align: center;
+}
+
+.sidebar-label {
+    transition: opacity 0.2s, width 0.2s;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.sidebar:not(.open) .sidebar-label {
+    opacity: 0;
+    width: 0;
+    padding: 0;
+}
+
+.sidebar.open .sidebar-label {
+    opacity: 1;
+    width: auto;
+    padding-left: 2px;
+}
+
+/* Модальне вікно для завдань */
+.task-modal {
+    display: none;
+    position: absolute;
+    min-width: 320px;
+    max-width: 90vw;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15);
+    padding: 24px;
+    z-index: 2000;
+    cursor: move;
+}
+
+.task-modal.open { display: block; }
+
+.task-content {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    position: relative;
+}
+
+#taskText {
+    width: 300px;
+    height: 120px;
+    border: 1px solid #cce4d7;
+    border-radius: 6px;
+    padding: 10px;
+    resize: vertical;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.save-btn-container { display: flex; justify-content: flex-end; }
+
+.save-task-btn {
+    background: #0b8f43;
+    border: none;
+    color: #fff;
+    font-size: 2rem;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.2s;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.save-task-btn:hover { background: #13ac58; }
+
+.close-task-btn {
+    position: absolute;
+    top: 10px;
+    right: 18px;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #e53935;
+    cursor: pointer;
+    z-index: 2001;
+    transition: color 0.2s;
+}
+
+.close-task-btn:hover { color: #b71c1c; }
+
+/* Модальне вікно для блокнота */
+.notebook-modal {
+    display: none;
+    position: absolute;
+    min-width: 320px;
+    max-width: 90vw;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15);
+    padding: 24px;
+    z-index: 2000;
+    cursor: move;
+}
+
+.notebook-modal.open { display: block; }
+
+.notebook-content {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    position: relative;
+}
+
+#notebookText {
+    width: 300px;
+    height: 120px;
+    border: 1px solid #cce4d7;
+    border-radius: 6px;
+    padding: 10px;
+    resize: vertical;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.save-note-btn {
+    background: #0b8f43;
+    border: none;
+    color: #fff;
+    font-size: 2rem;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.2s;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.save-note-btn:hover { background: #13ac58; }
+
+.close-notebook-btn {
+    position: absolute;
+    top: 10px;
+    right: 18px;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #e53935;
+    cursor: pointer;
+    z-index: 2001;
+    transition: color 0.2s;
+}
+
+.close-notebook-btn:hover { color: #b71c1c; }
+
+/* Додаткові позиції для другої галереї, якщо потрібно */
+#head1 { top: 0; left: 50px; width: 75%; }
+#shoulder1 { top: 94px; left: 9px; width: 89%; }
+#forearm1 { top: 82px; left: -125px; width: 85.5%; }
+#back1 { top: 135px; left: 60px; width: 65%; }
+#hips1 { top: 229px; left: 77px; width: 52%; }
+#knee1 { top: 307px; left: 86px; width: 46%; }
+#calf1 { top: 382px; left: 49px; width: 61%; }

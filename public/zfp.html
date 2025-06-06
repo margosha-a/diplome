@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ukr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles/training.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <title>ZFP</title>
+</head>
+<body>
+  <!-- Сайдбар -->
+  <aside id="sidebar" class="sidebar">
+    <button id="sidebarToggle" class="sidebar-toggle-btn" aria-label="Відкрити меню">
+      <i class="bi bi-layout-sidebar"></i>
+    </button>
+    <div class="sidebar-content">
+      <div class="sidebar-header">
+        <a href="profil.html" class="sidebar-link">
+          <i class="bi bi-person-circle sidebar-icon"></i>
+          <span class="sidebar-label">Профіль</span>
+        </a>
+      </div>
+      <ul class="sidebar-menu">
+        <li>
+          <a href="#" id="taskLink">
+            <i class="bi bi-card-checklist" style="font-size:1.8rem;"></i>
+            <span class="sidebar-label">Завдання</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" id="notebookLink">
+            <i class="bi bi-journal sidebar-icon"></i>
+            <span class="sidebar-label">Блокнот</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </aside>
+
+<!-- Модальне вікно для тасків -->
+<div id="taskModal" class="task-modal">
+  <button id="closeTaskBtn" class="close-task-btn" title="Закрити">×</button>
+  <div class="task-content">
+    <textarea id="taskText" placeholder="Пиши сюди свої нотатки..."></textarea>
+    <ul id="exerciseList" style="display:none"></ul>
+    <div class="save-btn-container">
+      <button id="saveTaskBtn" class="save-task-btn" title="Зберегти">
+        <i class="bi bi-check-circle-fill"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Модальне вікно для блокнота (Notebook) -->
+<div id="notebookModal" class="notebook-modal">
+  <button id="closeNotebookBtn" class="close-notebook-btn" title="Закрити">×</button>
+  <div class="notebook-content">
+    <textarea id="notebookText" placeholder="Пиши сюди свої нотатки..."></textarea>
+    <div class="save-btn-container">
+      <button id="saveNoteBtn" class="save-note-btn" title="Зберегти">
+        <i class="bi bi-check-circle-fill"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+  <h1>Вітаю на сторінці з ЗФП тренуваннями, бажаємо успіхів</h1>
+
+  <!-- Галерея з частинами тіла -->
+  <div class="photo-gallery">
+    <a href="zfp/golova.html" class="photo" id="head">
+        <img src="img/golova.png" alt="Голова">
+    </a>
+    <a href="zfp/plechi_bt.html" class="photo" id="shoulder">
+        <img src="img/plechi_bt.png" alt="Плечі">
+    </a>
+    <a href="zfp/predplechie.html" class="photo" id="forearm">
+        <img src="img/predplechie.png" alt="Передпліччя">
+    </a>
+    <a href="zfp/grudak_spina.html" class="photo" id="chest">
+        <img src="img/grudak_spina.png" alt="Груди/спина">
+    </a>
+    <a href="zfp/press.html" class="photo" id="abs">
+        <img src="img/press.png" alt="Прес">
+    </a>
+    <a href="zfp/yagodizu.html" class="photo" id="hips">
+        <img src="img/yagodizu.png" alt="Ягодиці">
+    </a>
+    <a href="zfp/bedra.html" class="photo" id="thigh">
+        <img src="img/bedra.png" alt="Бедра">
+    </a>
+    <a href="zfp/ikra.html" class="photo" id="calf">
+        <img src="img/ikra.png" alt="Ікри">
+    </a>
+</div>
+
+
+  <!-- Футер -->
+  <footer>
+    <span>© Created by Zinchenko M. D. student 545-B KHAI</span>
+    <img src="img/logo_og.png" alt="" class="foot">
+  </footer>
+
+  <script src="scripts/zfp.js"></script>
+</body>
+</html>

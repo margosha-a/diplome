@@ -1,0 +1,114 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background: radial-gradient(circle, #075724, #aee2c1);
+    color: #222;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  h2 {
+    margin-bottom: 30px;
+    color: azure;
+    font-size: 36px;
+  }
+  h1 {
+    margin-bottom: 30px;
+  }
+  
+  .exercise-single {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 24px;
+    background: #f8fff8;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
+    display: flex;
+    flex-direction: column; /* Заголовок сверху */
+    gap: 32px;
+    align-items: center; /* Центрируем заголовок */
+  }
+  
+  .name {
+    text-align: center;
+    font-size: 1.4em;
+    margin: 0;
+    width: 100%;
+  }
+  
+
+  /* Чтобы без дополнительного div, используем CSS Grid */
+  .exercise-single {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    grid-template-columns: 1fr 320px;
+    grid-template-areas:
+      "header header"
+      "photo video";
+    gap: 32px;
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 24px;
+    background: #f8fff8;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
+    color: #222;
+  }
+  
+  .name {
+    grid-area: header;
+    text-align: center;
+    font-size: 1.4em;
+    margin: 0 0 20px 0;
+  }
+  
+  .photo-description {
+    grid-area: photo;
+    display: flex;
+    gap: 16px;
+    flex-direction: column;
+  }
+  
+  .photo-description img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 8px;
+    background: #e8f5e9;
+    display: block;
+    align-self: flex-start;
+  }
+  
+  .description-container {
+    flex: 1;
+  }
+  
+  .video-container {
+    grid-area: video;
+    max-width: 320px;
+  }
+  
+  .video-container video {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    background: #e8f5e9;
+    display: block;
+  }
+  
+  footer {
+    margin-top: 40px;
+    text-align: center;
+    width: 100%;
+    max-width: 900px;
+    color: #444;
+  }
+  
+  footer img {
+    margin-top: 8px;
+    max-height: 40px;
+  }
+  
+ 

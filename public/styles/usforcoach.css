@@ -1,0 +1,79 @@
+/* === Основные стили === */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background: radial-gradient(circle, #075724, #aee2c1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    color: #222;
+}
+
+footer {
+    text-align: center;
+    width: 100%;
+    margin-top: 30px;
+}
+
+/* === Список клиентов === */
+.users-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+    max-width: 1000px;
+    width: 100%;
+}
+
+.user-card {
+    background: #ffffffcc;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    text-align: center;
+    width: 180px;
+    transition: transform 0.3s;
+}
+
+.user-card:hover {
+    transform: translateY(-5px);
+}
+
+.user-card img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.username {
+    font-size: 1.1rem;
+    color: #0b3d1e;
+    font-weight: bold;
+}
+ #task-block {
+    display: none;
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    background: #f9f9f9;
+}
+#task-text {
+    width: 100%;
+    min-height: 120px;
+     margin-bottom: 10px;
+}
+#close-task {
+    float: right;
+    cursor: pointer;
+    color: #888;
+}

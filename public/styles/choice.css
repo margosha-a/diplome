@@ -1,0 +1,136 @@
+/* Основной фон */
+body {
+    background: radial-gradient(circle, #075724, #aee2c1);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Шапка и футер */
+header, footer {
+    text-align: center;
+    width: 100%;
+}
+
+header {
+    margin-bottom: 20px;
+}
+
+footer {
+    margin-top: 20px;
+    font-size: 0.9rem;
+}
+
+footer img {
+    width: 50px;
+    height: auto;
+    margin-top: 10px;
+}
+
+/* Слайдер карточек */
+.card-slider {
+    position: relative;
+    max-width: 1000px;
+    margin: auto;
+    overflow: hidden;
+    padding: 20px;
+}
+
+.card-track {
+    display: flex;
+    transition: transform 0.4s ease-in-out;
+    gap: 20px;
+}
+
+.card {
+    flex: 0 0 30%; /* 3 карточки */
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Подсветка карточки при выборе */
+.card.selected {
+    border: 2px solid #4CAF50; /* Зеленая рамка для подсветки */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Изображение карточки */
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Кнопки навигации слайдера */
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #eee;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 10;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.prev-btn {
+    left: 0;
+}
+
+.next-btn {
+    right: 0;
+}
+
+.slider-btn:hover {
+    background-color: #ddd;
+}
+
+/* Кнопка "Обрати" */
+.choose-btn {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: none; /* Скрыта по умолчанию */
+}
+
+/* Кнопка "Обрати" для выбранной карточки */
+.card.selected .choose-btn {
+    display: block; /* Показываем кнопку, когда карточка выбрана */
+}
+
+/* Отступы для заголовков */
+h1, h3 {
+    margin: 10px 0;
+}
+
+/* Стиль для параграфов */
+p {
+    font-size: 0.9rem;
+    color: #555;
+    margin: 10px 0;
+}
+
+/* Стилизация футера */
+footer {
+    font-size: 0.8rem;
+    color: #777;
+}
+
+footer span {
+    display: block;
+    margin-top: 10px;
+}
+

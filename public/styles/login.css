@@ -1,0 +1,165 @@
+* {
+    font-family: "Outfit", sans-serif;
+    color: black;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 100vh;
+    background: radial-gradient(circle, #075724, #aee2c1);
+}
+
+header, footer {
+    text-align: center;
+    width: 100%;
+}
+
+header {
+    margin-bottom: 20px;
+}
+
+footer {
+    margin-top: 20px;
+}
+
+.imgHead {
+    width: 250px;
+    height: 350px;
+    float: left;
+}
+
+/* Контейнер выбору ролі */
+.role-selection {
+    background-color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    width: 280px;
+    height: auto; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Заголовок внутри контейнера выбора роли */
+.role-selection h2 {
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+/* Контейнер для радио кнопок */
+.role-options-container {
+    display: flex;
+    justify-content: center; /* Центрируем элементы по горизонтали */
+    align-items: center;  /* Центрируем по вертикали */
+    margin-bottom: 15px;
+}
+
+/* Опции выбора роли */
+.role-option {
+    display: flex;
+    align-items: center;
+    font-size: 18px; /* Уменьшаем размер шрифта */
+    cursor: pointer;
+    margin: 0 10px; /* Отступ между кнопками */
+}
+
+.role-option input[type="radio"] {
+    margin-right: 8px;
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+/* Стили для блока "Тренер" (если потребуется) */
+.trainer-code-container {
+    width: 380px;
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 30px 40px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transition: opacity 0.3s ease;
+}
+
+.trainer-code-container.hidden {
+    display: none;
+    opacity: 0;
+}
+
+/* Стили для формы входа/регистрации */
+.login-container, .signup-form {
+    width: 380px;
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 30px 40px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transition: opacity 0.3s ease;
+}
+
+/* Скрытие формы */
+.login-container.hidden, .signup-form.hidden {
+    display: none;
+    opacity: 0;
+}
+
+/* Стили для элементов ввода и кнопок */
+input, button {
+    width: 100%;
+    height: 50px;
+    margin: 10px 0;
+    border: 2px solid rgba(7, 82, 5, 0.2);
+    border-radius: 60px;
+    font-size: 15px;
+    text-indent: 15px;
+}
+
+input::placeholder {
+    color: black;
+    text-indent: 15px;
+}
+
+input:focus, button:focus {
+    border-color: transparent;
+}
+
+button {
+    background-color: rgba(6, 151, 33, 0.853);
+    border: none;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+}
+
+button:hover {
+    background-color: rgb(19, 223, 97);
+}
+
+a {
+    text-align: center;
+    transition: all 0.4s ease-in-out;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.hidden {
+    display: none;
+}
+.password-help {
+    font-size: 14px;
+    color: #c00; /* красный по умолчанию */
+    margin-top: -8px;
+    margin-bottom: 8px;
+    transition: color 0.3s;
+}
+.password-help.valid {
+    color: #0b8f43; /* зеленый, если пароль валиден */
+}

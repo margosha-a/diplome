@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ukr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles/training.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <title>Stretching</title>
+</head>
+<body>
+  <!-- Сайдбар -->
+  <aside id="sidebar" class="sidebar">
+    <button id="sidebarToggle" class="sidebar-toggle-btn" aria-label="Відкрити меню">
+      <i class="bi bi-layout-sidebar"></i>
+    </button>
+    <div class="sidebar-content">
+      <div class="sidebar-header">
+        <a href="profil.html" class="sidebar-link">
+          <i class="bi bi-person-circle sidebar-icon"></i>
+          <span class="sidebar-label">Профіль</span>
+        </a>
+      </div>
+      <ul class="sidebar-menu">
+        <li>
+          <a href="#" id="taskLink">
+            <i class="bi bi-card-checklist" style="font-size:1.8rem;"></i>
+            <span class="sidebar-label">Завдання</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" id="notebookLink">
+            <i class="bi bi-journal sidebar-icon"></i>
+            <span class="sidebar-label">Блокнот</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </aside>
+
+<!-- Модальне вікно для тасків -->
+<div id="taskModal" class="task-modal">
+  <button id="closeTaskBtn" class="close-task-btn" title="Закрити">×</button>
+  <div class="task-content">
+    <textarea id="taskText" placeholder="Пиши сюди свої нотатки..."></textarea>
+    <ul id="exerciseList" style="display:none"></ul>
+    <div class="save-btn-container">
+      <button id="saveTaskBtn" class="save-task-btn" title="Зберегти">
+        <i class="bi bi-check-circle-fill"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Модальне вікно для блокнота (Notebook) -->
+<div id="notebookModal" class="notebook-modal">
+  <button id="closeNotebookBtn" class="close-notebook-btn" title="Закрити">×</button>
+  <div class="notebook-content">
+    <textarea id="notebookText" placeholder="Пиши сюди свої нотатки..."></textarea>
+    <div class="save-btn-container">
+      <button id="saveNoteBtn" class="save-note-btn" title="Зберегти">
+        <i class="bi bi-check-circle-fill"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+  <h1>Вітаю на сторінці зі стретчінг-тренуваннями, бажаємо успіхів</h1>
+
+  <!-- Галерея з частинами тіла -->
+  <div class="photo-gallery">
+    <a href="stretching/head.html" class="photo" id="head1">
+        <img src="img/head.png" alt="Голова">
+    </a>
+    <a href="stretching/plecho.html" class="photo" id="shoulder1">
+        <img src="img/plecho.png" alt="Плечі">
+    </a>
+    <a href="stretching/predplechie_str.html" class="photo" id="forearm1">
+        <img src="img/predplechie_str.png" alt="Передпліччя">
+    </a>
+    <a href="stretching/spinna.html" class="photo" id="back1">
+        <img src="img/spina.png" alt="спина">
+    </a>
+    <a href="stretching/bedro.html" class="photo" id="hips1">
+        <img src="img/bedro.png" alt="Бедра">
+    </a>
+    <a href="stretching/koleni.html" class="photo" id="knee1">
+        <img src="img/koleni.png" alt="Ягодиці">
+    </a>
+    <a href="stretching/ikry.html" class="photo" id="calf1">
+        <img src="img/ikry.png" alt="Ікри">
+    </a>
+</div>
+
+
+  <footer>
+    <span>© Created by Zinchenko M. D. student 545-B KHAI</span>
+    <img src="img/logo_og.png" alt="" class="foot">
+  </footer>
+
+  <script src="scripts/zfp.js"></script>
+</body>
+</html>

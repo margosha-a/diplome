@@ -1,0 +1,106 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: radial-gradient(circle, #075724, #aee2c1);
+}
+
+.profile-container {
+    background: #fff;
+    padding: 24px 32px;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.09);
+    min-width: 320px;
+}
+
+.profile-view, .profile-edit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+}
+
+.profile-view img, .profile-edit img {
+    border-radius: 50%;
+    border: 2px solid #0b8f43;
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+}
+
+/* Кнопки профиля */
+.profile-edit button,
+.profile-view button {
+    width: 220px;
+    height: 48px;
+    padding: 0;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.08rem;
+    font-weight: 500;
+    cursor: pointer;
+    margin-bottom: 12px;
+    transition: background 0.25s, color 0.25s, box-shadow 0.25s, border-color 0.25s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    outline: none;
+    display: block;
+}
+
+.profile-edit button[type="submit"], 
+.profile-view button#editBtn {
+    background: #0b8f43;
+    color: #fff;
+    border: 2px solid #0b8f43;
+}
+.profile-edit button[type="submit"]:hover, 
+.profile-view button#editBtn:hover {
+    background: #1fc14c;
+    border-color: #1fc14c;
+}
+
+.profile-edit button#deleteAccount {
+    background: #c00;
+    color: #fff;
+    border: 2px solid #c00;
+}
+.profile-edit button#deleteAccount:hover {
+    background: #ff3333;
+    border-color: #ff3333;
+}
+
+.profile-edit button#cancelEdit {
+    background: #888;
+    color: #fff;
+    border: 2px solid #888;
+}
+.profile-edit button#cancelEdit:hover {
+    background: #aaa;
+    border-color: #aaa;
+}
+
+/* Чтобы не было двойных отступов между кнопками */
+.profile-edit button:last-child {
+    margin-bottom: 0;
+}
+
+/* Файл */
+input[type="file"] {
+    margin-bottom: 8px;
+}
+
+/* Подсказка по паролю */
+.password-help {
+    font-size: 14px;
+    color: #c00;
+    margin-top: 6px;
+    margin-bottom: 12px;
+    line-height: 1.4;
+    display: block;
+    max-width: 340px;
+}
+.password-help.valid {
+    color: #0b8f43;
+}
